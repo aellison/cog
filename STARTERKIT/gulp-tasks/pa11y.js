@@ -44,10 +44,6 @@ module.exports = function (gulp, plugins, options) {
                 warnings++;
                 gutil.log(gutil.colors.magenta(message));
               }
-              else if (result.type === 'notice') {
-                notices++;
-                gutil.log(gutil.colors.cyan(message));
-              }
             }
           }
 
@@ -58,8 +54,7 @@ module.exports = function (gulp, plugins, options) {
                 '  Build failed due to accessibility errors exceeding threshold (' + errors + ' errors) with a threshold of ' + options.pa11y.threshold.errors +
                 '\n================================================================================\n' +
                 errors + ' errors\n' +
-                warnings + ' warnings\n' +
-                notices + ' notices\n'
+                warnings + ' warnings\n'
               )
             ));
           }
@@ -70,20 +65,7 @@ module.exports = function (gulp, plugins, options) {
                 '  Build failed due to accessibility warnings exceeding threshold (' + warnings + ' warnings) with a threshold of ' + options.pa11y.threshold.warnings +
                 '\n================================================================================\n' +
                 errors + ' errors\n' +
-                warnings + ' warnings\n' +
-                notices + ' notices\n'
-              )
-            ));
-          }
-          else if (options.pa11y.threshold.notices > -1 && notices > options.pa11y.threshold.notices) {
-            cb(new gutil.PluginError('pa11y',
-              gutil.colors.cyan(
-                '\n================================================================================\n' +
-                '  Build failed due to accessibility notices exceeding threshold (' + notices + ' notices) with a threshold of ' + options.pa11y.threshold.notices +
-                '\n================================================================================\n' +
-                errors + ' errors\n' +
-                warnings + ' warnings\n' +
-                notices + ' notices\n'
+                warnings + ' warnings\n'
               )
             ));
           }
@@ -94,8 +76,7 @@ module.exports = function (gulp, plugins, options) {
                 '  Build succeeded.' +
                 '\n================================================================================\n' +
                 errors + ' errors\n' +
-                warnings + ' warnings\n' +
-                notices + ' notices\n'
+                warnings + ' warnings\n'
               )
             );
           }
