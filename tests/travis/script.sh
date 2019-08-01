@@ -21,8 +21,8 @@ cd "$TRAVIS_BUILD_DIR/starterkit"
 
 node --version
 npm --version
+npm npm cache clean --force 
 npm install -g gulp-cli
-npm install -g npm@latest
 npm run install-tools
 
 gulp
