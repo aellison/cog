@@ -21,7 +21,7 @@ cd "$TRAVIS_BUILD_DIR/starterkit"
 
 node --version
 npm --version
-nvm --version
+nvm use 8.9
 npm install -g gulp-cli
 npm run install-tools
 
