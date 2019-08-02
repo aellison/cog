@@ -50,6 +50,7 @@ before_script: ../orca/bin/travis/before_script.sh
 script:
   - ../orca/bin/travis/script.sh
   - nvm --version
+  - nvm install 8.9
   - nvm use 8.9
   - ./tests/travis/script.sh
 
