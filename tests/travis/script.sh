@@ -21,7 +21,9 @@ cd "$TRAVIS_BUILD_DIR/starterkit"
 
 node --version
 npm --version
-nvm use 8.9
+echo $NVM_DIR;
+rm -rf node_modules
+npm install -g npm@5.7
 npm install -g gulp-cli
 npm run install-tools
 
