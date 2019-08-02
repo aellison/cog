@@ -19,6 +19,7 @@ source ../../../orca/bin/travis/_includes.sh
 
 cd "$TRAVIS_BUILD_DIR/starterkit"
 
+node --version
 npm install -g gulp-cli
 npm run install-tools
 
